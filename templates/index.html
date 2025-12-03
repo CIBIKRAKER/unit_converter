@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <legend>Unit Converter</legend>
+
+        <nav>
+            <ul>
+                <li><a href="/length">Length</a></li>
+                <li><a href="/weight">Weight</a></li>
+                <li><a href="/temperature">Temperature</a></li>
+            </ul>
+        </nav>
+
+        <label for="valueInput">Value to Convert</label>
+        <input type="text" id="valueInput">
+
+        <label for="fromUnit">From Unit</label>
+        <select id="fromUnit">
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="mile">Mile</option>
+            <option value="inch">Inch</option>
+        </select>
+
+        <label for="toUnit">To Unit</label>
+        <select id="toUnit">
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="mile">Mile</option>
+            <option value="inch">Inch</option>
+        </select>
+
+        <button>Convert</button>
+    </div>
+</body>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("nav a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function() {
+            // Remove active from all links
+            links.forEach(l => l.classList.remove("active"));
+
+            // Add active to clicked link
+            this.classList.add("active");
+        });
+    });
+});
+</script>
+
+
+</html>

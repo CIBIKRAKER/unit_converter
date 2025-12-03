@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: none;
+    background-color: #dbdbdb;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    margin: 100px auto;
+    padding: 100px 50px;
+    height: 500px;
+    width: 500px;
+    background-color: wheat;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.container input {
+    margin: 15px 0px;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    float: left;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+legend {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}   
+
+label {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-family: sans-serif;
+    text-align: left;
+    font-weight: bold;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #555;
+}
+
+
+select {
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><polygon points="0,0 140,0 70,70" fill="black"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    cursor: pointer;
+
+}
+
+select:focus {
+    outline: none;
+    border: 2px solid #555;
+}
+
+
+
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #e0e0e0;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: 2px solid black;
+    
+}
+
+button:hover {
+    background-color: #aaa;
+}
+
+nav{
+    margin:20px 0;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    gap: 40px;
+}
+
+li{
+    
+    display: inline;
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+}
