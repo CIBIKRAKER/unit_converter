@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <legend>Unit Converter</legend>
+
+        <nav>
+            <ul>
+                <li><a href="/length">Length</a></li>
+                <li><a href="/weight">Weight</a></li>
+                <li><a href="/temperature">Temperature</a></li>
+            </ul>
+        </nav>
+
+        <form action="/length" method="POST">
+            <label for="valueInput">Value to Convert</label>
+            <input type="text" id="valueInput" name="value">
+
+            <label for="fromUnit">From Unit</label>
+            <select id="fromUnit" name="from_unit">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="inch">Inch</option>
+            </select>
+
+            <label for="toUnit">To Unit</label>
+            <select id="toUnit" name="to_unit">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="inch">Inch</option>
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+        
+        {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+        {% endif %}
+        
+    </div>
+</body>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("nav a");
+
+  
+  links.forEach(link => {
+    const linkPath = new URL(link.href).pathname.replace(/\/$/, ""); 
+    const currentPath = location.pathname.replace(/\/$/, "");
+    if (linkPath === currentPath) link.classList.add("active");
+  });
+
+
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
+</script>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Weight Converter</title>
+</head>
+<body>
+    <div class="container">
+        <legend>Unit Converter</legend>
+
+        <nav>
+            <ul>
+                <li><a href="/length">Length</a></li>
+                <li><a href="/weight" class="active">Weight</a></li>
+                <li><a href="/temperature">Temperature</a></li>
+            </ul>
+        </nav>
+        <form action="/weight" method="POST">
+            <label for="valueInput">Value to Convert</label>
+            <input type="text" id="valueInput">
+
+            <label for="fromUnit">From Unit</label>
+            <select id="fromUnit">
+                <option value="gram">Gram</option>
+                <option value="kilogram">Kilogram</option>
+                <option value="pound">Pound</option>
+                <option value="ounce">Ounce</option>
+            </select>
+
+            <label for="toUnit">To Unit</label>
+            <select id="toUnit">
+                <option value="gram">Gram</option>
+                <option value="kilogram">Kilogram</option>
+                <option value="pound">Pound</option>
+                <option value="ounce">Ounce</option>
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+
+        
+    </div>
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("nav a");
+
+  
+  links.forEach(link => {
+    const linkPath = new URL(link.href).pathname.replace(/\/$/, ""); 
+    const currentPath = location.pathname.replace(/\/$/, "");
+    if (linkPath === currentPath) link.classList.add("active");
+  });
+
+  
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
+</script>
+
+</html>
