@@ -18,30 +18,12 @@
             </ul>
         </nav>
 
-        <form action="/length" method="POST">
-            <label for="valueInput">Value to Convert</label>
-            <input type="text" id="valueInput" name="value">
-
-            <label for="fromUnit">From Unit</label>
-            <select id="fromUnit" name="from_unit">
-                <option value="meter">Meter</option>
-                <option value="kilometer">Kilometer</option>
-                <option value="mile">Mile</option>
-                <option value="inch">Inch</option>
-            </select>
-
-            <label for="toUnit">To Unit</label>
-            <select id="toUnit" name="to_unit">
-                <option value="meter">Meter</option>
-                <option value="kilometer">Kilometer</option>
-                <option value="mile">Mile</option>
-                <option value="inch">Inch</option>
-            </select>
-            <button type="submit">Convert</button>
-        </form>
-        
-        
-        
+        <div class="result">
+            <h2>Result of your calculation</h2>
+            <br>
+            <h3>{{ value }} {{ fromUnit }} = {{ converted_value }} {{ toUnit }}</h3>
+            <a href="{{ return_url }}"><button>Perform Another Conversion</button></a>
+        </div>
     </div>
 </body>
 

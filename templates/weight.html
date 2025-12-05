@@ -19,10 +19,10 @@
         </nav>
         <form action="/weight" method="POST">
             <label for="valueInput">Value to Convert</label>
-            <input type="text" id="valueInput">
+            <input type="text" id="valueInput" name="value">
 
             <label for="fromUnit">From Unit</label>
-            <select id="fromUnit">
+            <select id="fromUnit" name="from_unit">
                 <option value="gram">Gram</option>
                 <option value="kilogram">Kilogram</option>
                 <option value="pound">Pound</option>
@@ -30,7 +30,7 @@
             </select>
 
             <label for="toUnit">To Unit</label>
-            <select id="toUnit">
+            <select id="toUnit" name="to_unit">
                 <option value="gram">Gram</option>
                 <option value="kilogram">Kilogram</option>
                 <option value="pound">Pound</option>

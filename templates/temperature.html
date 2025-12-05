@@ -20,17 +20,17 @@
 
         <form action="/temperature" method="POST">
             <label for="valueInput">Value to Convert</label>
-            <input type="text" id="valueInput">
+            <input type="text" id="valueInput" name="value">
 
             <label for="fromUnit">From Unit</label>
-            <select id="fromUnit">
+            <select id="fromUnit" name="from_unit">
                 <option value="celsius">Celsius</option>
                 <option value="fahrenheit">Fahrenheit</option>
                 <option value="kelvin">Kelvin</option>
             </select>
 
             <label for="toUnit">To Unit</label>
-            <select id="toUnit">
+            <select id="toUnit" name="to_unit">
                 <option value="celsius">Celsius</option>
                 <option value="fahrenheit">Fahrenheit</option>
                 <option value="kelvin">Kelvin</option>
